@@ -8,7 +8,7 @@ from torch.utils.data import DataLoader
 
 # 图像分割结果的可视化展示
 def visualize(**images):
-    """PLot images in one row."""
+    """Plot images in one row."""
     n = len(images)
     plt.figure(figsize=(16, 5))
     for i, (name, image) in enumerate(images.items()):
@@ -38,7 +38,7 @@ if __name__ == '__main__':
     preprocessing_fn = smp.encoders.get_preprocessing_fn(ENCODER, ENCODER_WEIGHTS)
 
     # 加载模型
-    best_model = torch.load('../checkpoint/unet++/se_resnet50/best_model.pth')
+    best_model = torch.load('../checkpoint/unet++_da/se_resnet50/best_model.pth')
 
     # create test dataset
     test_dataset = Dataset(
