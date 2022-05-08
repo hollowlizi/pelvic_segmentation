@@ -48,14 +48,7 @@ def to_tensor(x, **kwargs):
     return x.transpose(2, 0, 1).astype('float32')
 
 def get_preprocessing(preprocessing_fn):
-    """进行图像预处理操作
-
-    Args:
-        preprocessing_fn (callbale): 数据规范化的函数
-            (针对每种预训练的神经网络)
-    Return:
-        transform: albumentations.Compose
-    """
+    # 进行图像预处理操作
 
     _transform = [
         albu.Lambda(image=preprocessing_fn),
@@ -64,7 +57,7 @@ def get_preprocessing(preprocessing_fn):
     return albu.Compose(_transform)
 
 def visualize(**images):
-    """PLot images in one row."""
+    
     n = len(images)
     plt.figure(figsize=(16, 5))
     for i, (name, image) in enumerate(images.items()):
