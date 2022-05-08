@@ -84,7 +84,7 @@ def get_training_augmentation():
 
 
 def get_validation_augmentation():
-    """调整图像使得图片的分辨率长宽能被32整除"""
+    
     test_transform = [
         albu.PadIfNeeded(320, 320)
     ]
